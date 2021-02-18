@@ -1,0 +1,16 @@
+
+spring:
+  profiles: single
+
+eureka:
+  instance:
+    name: localhost
+#    prefer-ip-address: true
+
+  client:
+    #false表示自己就是注册中心 无需检索服务
+    fetch-registry: false
+    #eurekaserver无需注册到eureka上
+    register-with-eureka: false
+    service-url:
+      defaultZone:  http://${eureka.instance.name}:${server.port}/eureka/
